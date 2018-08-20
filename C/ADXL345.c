@@ -10,7 +10,7 @@
 #include <sys/ioctl.h>
 #include <fcntl.h>
 
-void main() 
+int main() 
 {
 	// Create I2C bus
 	int file;
@@ -48,7 +48,7 @@ void main()
 	char data[6] ={0};
 	if(read(file, data, 6) != 6)
 	{
-		printf("Erorr : Input/output Erorr \n");
+		printf("Error : Input/output Error \n");
 		exit(1);
 	}
 	else
@@ -77,4 +77,6 @@ void main()
 		printf("Acceleration in Y-Axis : %d \n", yAccl);
 		printf("Acceleration in Z-Axis : %d \n", zAccl);
 	}
+	
+	return 0;
 }
